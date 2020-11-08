@@ -2,8 +2,6 @@
 
 namespace Hesabe\Payment;
 
-use Hesabe\Payment\Payment\Config;
-
 /**
  * Class Payment
  *
@@ -14,6 +12,7 @@ class Payment
     private $secretKey;
     private $ivKey;
     private $accessCode;
+    private $test;
 
     /**
      * Payment constructor.
@@ -21,45 +20,40 @@ class Payment
      * @param $secretKey
      * @param $ivKey
      * @param $accessCode
+     * @param  bool  $test
      */
-    public function __construct($secretKey, $ivKey, $accessCode)
+    public function __construct($secretKey, $ivKey, $accessCode, $test = false)
     {
         $this->secretKey = $secretKey;
         $this->ivKey = $ivKey;
         $this->accessCode = $accessCode;
-    }
-
-    /**
-     * @param $name
-     *
-     * @return  string
-     */
-    public function sayHello($name)
-    {
-        $greeting = $this->config->get('greeting');
-
-        return $greeting . ' ' . $name;
+        $this->test = $test;
     }
 
     public function checkout(array $params): string
     {
         $encryptedData = HesabeCrypt::encrypt(json_encode($params), $this->secretKey, $this->ivKey);
 
-        $curl = curl_init();
+        $endpoints = [
+            true => 'https://sandbox.hesabe.com',
+            false => 'https://api.hesabe.com'
+        ];
 
+        $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "http://api.hesbstck.com/checkout",
+            CURLOPT_URL => $endpoints[$this->test]."/checkout",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 0,
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => array('data' => $encryptedData),
             CURLOPT_HTTPHEADER => array(
                 "accessCode: $this->accessCode",
-                "Content-Type: application/json",
                 "Accept: application/json"
             ),
         ));
@@ -76,5 +70,4 @@ class Payment
 
         return $jsonData['response']['data'];
     }
-
 }
