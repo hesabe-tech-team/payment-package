@@ -34,14 +34,9 @@ class Payment
     {
         $encryptedData = HesabeCrypt::encrypt(json_encode($params), $this->secretKey, $this->ivKey);
 
-        $endpoints = [
-            true => 'https://sandbox.hesabe.com',
-            false => 'https://api.hesabe.com'
-        ];
-
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $endpoints[$this->test]."/checkout",
+            CURLOPT_URL => $this->getRedirectBaseUrl()."/checkout",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -69,5 +64,15 @@ class Payment
         }
 
         return $jsonData['response']['data'];
+    }
+
+    public function getRedirectBaseUrl(): string
+    {
+        $endpoints = [
+            true => 'https://sandbox.hesabe.com',
+            false => 'https://api.hesabe.com'
+        ];
+
+        return $endpoints[$this->test];
     }
 }
