@@ -1,6 +1,6 @@
 <?php
 
-namespace Hesabe\Payment\Payment\Tests;
+namespace Hesabe\Payment\Tests;
 
 use PHPUnit_Framework_TestCase as PHPUnit;
 
