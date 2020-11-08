@@ -1,9 +1,9 @@
 <?php
 
-namespace Hesabe\Payment;
+namespace Hesabe\Payment\Payment;
 
 use Illuminate\Config\Repository;
-use Hesabe\Payment\Exceptions\ConfigFileNotFoundException;
+use Hesabe\Payment\Payment\Exceptions\ConfigFileNotFoundException;
 
 /**
  * Class Config

@@ -1,6 +1,6 @@
 <?php
 
-namespace Hesabe\Payment\Exceptions;
+namespace Hesabe\Payment\Payment\Exceptions;
 
 use Exception as CoreException;
 

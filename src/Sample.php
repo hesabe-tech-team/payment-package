@@ -1,6 +1,6 @@
 <?php
 
-namespace Hesabe\Payment;
+namespace Hesabe\Payment\Payment;
 
 /**
  * Class Sample
@@ -11,14 +11,14 @@ class Sample
 {
 
     /**
-     * @var  \Hesabe\Payment\Config
+     * @var  \Hesabe\Payment\Payment\Config
      */
     private $config;
 
     /**
      * Sample constructor.
      *
-     * @param \Hesabe\Payment\Config $config
+     * @param \Hesabe\Payment\Payment\Config $config
      */
     public function __construct(Config $config)
     {

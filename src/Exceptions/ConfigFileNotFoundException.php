@@ -1,5 +1,5 @@
 <?php
-namespace Hesabe\Payment\Exceptions;
+namespace Hesabe\Payment\Payment\Exceptions;
 
 /**
  * Class ConfigFileNotFoundException

@@ -1,9 +1,9 @@
 <?php
 
-namespace Hesabe\Payment\Tests;
+namespace Hesabe\Payment\Payment\Tests;
 
-use Hesabe\Payment\Config;
-use Hesabe\Payment\Sample;
+use Hesabe\Payment\Payment\Config;
+use Hesabe\Payment\Payment\Sample;
 
 /**
  * Class SampleTest

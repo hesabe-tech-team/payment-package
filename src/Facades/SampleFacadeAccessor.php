@@ -1,6 +1,6 @@
 <?php
 
-namespace Hesabe\Payment\Facades;
+namespace Hesabe\Payment\Payment\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

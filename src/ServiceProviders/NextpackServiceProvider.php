@@ -1,11 +1,11 @@
 <?php
 
-namespace Hesabe\Payment\ServiceProviders;
+namespace Hesabe\Payment\Payment\ServiceProviders;
 
 use Illuminate\Support\ServiceProvider;
-use Hesabe\Payment\Contracts\SampleInterface;
-use Hesabe\Payment\Facades\SampleFacadeAccessor;
-use Hesabe\Payment\Sample;
+use Hesabe\Payment\Payment\Contracts\SampleInterface;
+use Hesabe\Payment\Payment\Facades\SampleFacadeAccessor;
+use Hesabe\Payment\Payment\Sample;
 
 /**
  * Class NextpackServiceProvider

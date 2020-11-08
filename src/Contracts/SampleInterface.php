@@ -1,6 +1,6 @@
 <?php
 
-namespace Hesabe\Payment\Contracts;
+namespace Hesabe\Payment\Payment\Contracts;
 
 /**
  * Interface  SampleInterface
