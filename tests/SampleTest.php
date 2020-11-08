@@ -3,7 +3,7 @@
 namespace Hesabe\Payment\Payment\Tests;
 
 use Hesabe\Payment\Payment\Config;
-use Hesabe\Payment\Payment\Sample;
+use Hesabe\Payment\Payment\Payment;
 
 /**
  * Class SampleTest
@@ -18,7 +18,7 @@ class SampleTest extends TestCase
     public function testSayHello()
     {
         $config = new Config();
-        $sample = new Sample($config);
+        $sample = new Payment($config);
 
         $name = 'Fahad Khan';
 

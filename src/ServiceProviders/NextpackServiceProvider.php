@@ -3,9 +3,9 @@
 namespace Hesabe\Payment\Payment\ServiceProviders;
 
 use Illuminate\Support\ServiceProvider;
-use Hesabe\Payment\Payment\Contracts\SampleInterface;
+use Hesabe\Payment\Payment\Contracts\PaymentInterface;
 use Hesabe\Payment\Payment\Facades\SampleFacadeAccessor;
-use Hesabe\Payment\Payment\Sample;
+use Hesabe\Payment\Payment\Payment;
 
 /**
  * Class NextpackServiceProvider
@@ -70,8 +70,8 @@ class NextpackServiceProvider extends ServiceProvider
     private function implementationBindings()
     {
         $this->app->bind(
-            SampleInterface::class,
-            Sample::class
+            PaymentInterface::class,
+            Payment::class
         );
     }
 
@@ -93,13 +93,13 @@ class NextpackServiceProvider extends ServiceProvider
     {
         // Register 'nextpack.say' instance container
         $this->app['nextpack.sample'] = $this->app->share(function ($app) {
-            return $app->make(Sample::class);
+            return $app->make(Payment::class);
         });
 
-        // Register 'Sample' Alias, So users don't have to add the Alias to the 'app/config/app.php'
+        // Register 'Payment' Alias, So users don't have to add the Alias to the 'app/config/app.php'
         $this->app->booting(function () {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('Sample', SampleFacadeAccessor::class);
+            $loader->alias('Payment', SampleFacadeAccessor::class);
         });
     }
 

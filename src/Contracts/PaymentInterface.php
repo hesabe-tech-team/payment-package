@@ -3,11 +3,11 @@
 namespace Hesabe\Payment\Payment\Contracts;
 
 /**
- * Interface  SampleInterface
+ * Interface  PaymentInterface
  *
  * @author   Fahad Khan  <fkhan@hesabe.com>
  */
-interface SampleInterface
+interface PaymentInterface
 {
 
 }

@@ -1,24 +1,26 @@
 <?php
 
-namespace Hesabe\Payment\Payment;
+namespace Hesabe\Payment;
+
+use Hesabe\Payment\Payment\Config;
 
 /**
- * Class Sample
+ * Class Payment
  *
  * @author  Fahad Khan  <fkhan@hesabe.com>
  */
-class Sample
+class Payment
 {
 
     /**
-     * @var  \Hesabe\Payment\Payment\Config
+     * @var  Config
      */
     private $config;
 
     /**
-     * Sample constructor.
+     * Payment constructor.
      *
-     * @param \Hesabe\Payment\Payment\Config $config
+     * @param  Config  $config
      */
     public function __construct(Config $config)
     {
