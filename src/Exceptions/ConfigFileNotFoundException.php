@@ -1,10 +1,10 @@
 <?php
-namespace Nextpack\Nextpack\Exceptions;
+namespace Hesabe\Payment\Exceptions;
 
 /**
  * Class ConfigFileNotFoundException
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
+ * @author  Fahad Khan  <fkhan@hesabe.com>
  */
 class ConfigFileNotFoundException extends Exception
 {

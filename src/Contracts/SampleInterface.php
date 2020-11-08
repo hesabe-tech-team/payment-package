@@ -1,11 +1,11 @@
 <?php
 
-namespace Nextpack\Nextpack\Contracts;
+namespace Hesabe\Payment\Contracts;
 
 /**
  * Interface  SampleInterface
  *
- * @author   Mahmoud Zalt  <mahmoud@zalt.me>
+ * @author   Fahad Khan  <fkhan@hesabe.com>
  */
 interface SampleInterface
 {

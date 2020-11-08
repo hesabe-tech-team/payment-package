@@ -1,16 +1,16 @@
 <?php
 
-namespace Nextpack\Nextpack\Tests;
+namespace Hesabe\Payment\Tests;
 
-use Nextpack\Nextpack\Config;
-use Nextpack\Nextpack\Sample;
+use Hesabe\Payment\Config;
+use Hesabe\Payment\Sample;
 
 /**
  * Class SampleTest
  *
  * @category Test
- * @package  Nextpack\Nextpack\Tests
- * @author   Mahmoud Zalt <mahmoud@zalt.me>
+ * @package  Hesabe\Payment\Tests
+ * @author   Fahad Khan <fkhan@hesabe.com>
  */
 class SampleTest extends TestCase
 {
@@ -20,7 +20,7 @@ class SampleTest extends TestCase
         $config = new Config();
         $sample = new Sample($config);
 
-        $name = 'Mahmoud Zalt';
+        $name = 'Fahad Khan';
 
         $result = $sample->sayHello($name);
 

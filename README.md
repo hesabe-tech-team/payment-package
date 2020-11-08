@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/nextpack/nextpack/v/stable)](https://packagist.org/packages/nextpack/nextpack) 
 [![License](https://poser.pugx.org/nextpack/nextpack/license)](https://packagist.org/packages/nextpack/nextpack)
-[![Mahmoud Zalt](https://img.shields.io/badge/Author-Mahmoud%20Zalt-orange.svg)](http://www.zalt.me)
+[![Fahad Khan](https://img.shields.io/badge/Author-Mahmoud%20Zalt-orange.svg)](http://www.zalt.me)
 
 
 
@@ -72,7 +72,7 @@ After you install a fresh copy of Nextpack, the only thing you need to do is cus
 
 The steps include renaming the code samples shipped with the Nextpack:
 
-1. Change the namespace of the application from `Nextpack\Nextpack` to your `Vendor-name\Package-name`. *(you can do this using the [Replace All] feature of your IDE).*
+1. Change the namespace of the application from `Hesabe\Payment` to your `Vendor-name\Package-name`. *(you can do this using the [Replace All] feature of your IDE).*
 2. Update the following values in `composer.json`:  `name`, `description`, `keywords`, `authors`, `autoload` and don't forget to update the `namespaces`. (you might need to run `composer dump-autoload` after the changes).
 3. Run `composer install`
 4. Rename `SampleFacadeAccessor.php` and update the returned string inside the `getFacadeAccessor()` function.
@@ -99,7 +99,7 @@ $ ./vendor/bin/phpunit
 
 ## Credits
 
-- [Mahmoud Zalt](https://github.com/Mahmoudz)
+- [Fahad Khan](https://github.com/Mahmoudz)
 
 
 

@@ -1,46 +1,47 @@
 {
-  "name": "nextpack/nextpack",
-  "description": "Nextpack is a PHP Packages Framework (Starter Project)",
-  "license": "MIT",
-  "keywords": [
-    "NextPack",
-    "Starter"
-  ],
-  "authors": [
-    {
-      "name": "Mahmoud Zalt",
-      "email": "mahmoud@zalt.me",
-      "homepage": "http://www.zalt.me",
-      "role": "Coffee Maker :)"
-    }
-  ],
-  "require": {
-    "php": ">=5.4.0",
-    "illuminate/config": "5.2.*"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "4.*",
-    "mockery/mockery": "0.*",
-    "symfony/var-dumper": "2.*"
-  },
-  "autoload": {
-    "psr-4": {
-      "Nextpack\\Nextpack\\": "src",
-      "Nextpack\\Library\\": "src/library"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Nextpack\\Nextpack\\Tests\\": "tests"
-    }
-  },
-  "scripts": {
-    "test": "phpunit"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0-dev"
-    }
-  },
-  "minimum-stability": "stable"
+    "name": "hesabe/payment",
+    "description": "Hesabe Payment package",
+    "license": "MIT",
+    "keywords": [
+        "Hesabe",
+        "Payment"
+    ],
+    "authors": [
+        {
+            "name": "Fahad Khan",
+            "email": "fkhan@hesabe.com",
+            "homepage": "http://hesabe.com",
+            "role": "Payment API"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/config": "5.2.*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "4.*",
+        "mockery/mockery": "0.*",
+        "symfony/var-dumper": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hesabe\\Payment\\": "src",
+            "Hesabe\\Library\\": "src/library"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hesabe\\Payment\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "stable"
 }

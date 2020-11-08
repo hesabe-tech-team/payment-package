@@ -1,13 +1,13 @@
 <?php
 
-namespace Nextpack\Nextpack\Tests;
+namespace Hesabe\Payment\Tests;
 
 use PHPUnit_Framework_TestCase as PHPUnit;
 
 /**
  * Class TestCase
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
+ * @author  Fahad Khan  <fkhan@hesabe.com>
  */
 class TestCase extends PHPUnit
 {

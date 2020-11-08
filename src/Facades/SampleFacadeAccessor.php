@@ -1,13 +1,13 @@
 <?php
 
-namespace Nextpack\Nextpack\Facades;
+namespace Hesabe\Payment\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class SampleFacadeAccessor
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
+ * @author  Fahad Khan  <fkhan@hesabe.com>
  */
 class SampleFacadeAccessor extends Facade
 {

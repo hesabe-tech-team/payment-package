@@ -1,13 +1,13 @@
 <?php
 
-namespace Nextpack\Nextpack\Exceptions;
+namespace Hesabe\Payment\Exceptions;
 
 use Exception as CoreException;
 
 /**
  * Class Exception
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
+ * @author  Fahad Khan  <fkhan@hesabe.com>
  */
 class Exception extends CoreException
 {

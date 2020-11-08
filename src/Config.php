@@ -1,14 +1,14 @@
 <?php
 
-namespace Nextpack\Nextpack;
+namespace Hesabe\Payment;
 
 use Illuminate\Config\Repository;
-use Nextpack\Nextpack\Exceptions\ConfigFileNotFoundException;
+use Hesabe\Payment\Exceptions\ConfigFileNotFoundException;
 
 /**
  * Class Config
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
+ * @author  Fahad Khan  <fkhan@hesabe.com>
  */
 class Config
 {
@@ -19,14 +19,14 @@ class Config
     CONST CONFIG_FILE_NAME = "nextpack";
 
     /**
-     * @var  \Illuminate\Config\Repository
+     * @var  Repository
      */
     private $config;
 
     /**
      * Config constructor.
      *
-     * @param \Illuminate\Config\Repository $config
+     * @throws ConfigFileNotFoundException
      */
     public function __construct()
     {

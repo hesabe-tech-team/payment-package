@@ -1,24 +1,24 @@
 <?php
 
-namespace Nextpack\Nextpack;
+namespace Hesabe\Payment;
 
 /**
  * Class Sample
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
+ * @author  Fahad Khan  <fkhan@hesabe.com>
  */
 class Sample
 {
 
     /**
-     * @var  \Nextpack\Nextpack\Config
+     * @var  \Hesabe\Payment\Config
      */
     private $config;
 
     /**
      * Sample constructor.
      *
-     * @param \Nextpack\Nextpack\Config $config
+     * @param \Hesabe\Payment\Config $config
      */
     public function __construct(Config $config)
     {
