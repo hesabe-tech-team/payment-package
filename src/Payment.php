@@ -11,11 +11,6 @@ use Hesabe\Payment\Payment\Config;
  */
 class Payment
 {
-
-    /**
-     * @var  Config
-     */
-    private $config;
     private $secretKey;
     private $ivKey;
     private $accessCode;
@@ -23,14 +18,12 @@ class Payment
     /**
      * Payment constructor.
      *
-     * @param  Config  $config
      * @param $secretKey
      * @param $ivKey
      * @param $accessCode
      */
-    public function __construct(Config $config, $secretKey, $ivKey, $accessCode)
+    public function __construct($secretKey, $ivKey, $accessCode)
     {
-        $this->config = $config;
         $this->secretKey = $secretKey;
         $this->ivKey = $ivKey;
         $this->accessCode = $accessCode;
