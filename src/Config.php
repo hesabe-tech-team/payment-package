@@ -16,7 +16,7 @@ class Config
     /**
      * Config file name
      */
-    CONST CONFIG_FILE_NAME = "nextpack";
+    CONST CONFIG_FILE_NAME = "config";
 
     /**
      * @var  Repository
