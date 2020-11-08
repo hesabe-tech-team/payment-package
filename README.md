@@ -1,8 +1,8 @@
-# Nextpack (light)
+# Hesabe Payment Package
 
 [![Latest Stable Version](https://poser.pugx.org/nextpack/nextpack/v/stable)](https://packagist.org/packages/nextpack/nextpack) 
 [![License](https://poser.pugx.org/nextpack/nextpack/license)](https://packagist.org/packages/nextpack/nextpack)
-[![Fahad Khan](https://img.shields.io/badge/Author-Mahmoud%20Zalt-orange.svg)](http://www.zalt.me)
+[![Fahad Khan](https://img.shields.io/badge/Author-Fahad%20Khan-orange.svg)](https://hesabe.com)
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-**NextPack** is a PHP & Laravel Packages Starter, (Designed to help  building high quality PHP Packages faster).
+**Hesabe Payment** is a PHP package designed to integrate Hesabe Payment Gateway in your application in the easiest way possible.
 
 >Clone NextPack and build your next open source package on top of it.
 
