@@ -2,7 +2,7 @@
 
 /**
  * Description of HesabeCrypt
- * This Encrypt Decrypt methods for API Request and Response over in hesabe
+ * This Encrypt Decrypt methods for API Request and Response over in Hesabe
  *
  * @author Hesabe
  */
@@ -11,7 +11,13 @@ namespace Hesabe\Payment;
 
 class HesabeCrypt
 {
-    //AES Encryption Method Starts
+    /**
+     * AES Encryption Method
+     * @param $str
+     * @param $key
+     * @param $ivKey
+     * @return string
+     */
     public static function encrypt($str, $key, $ivKey): string
     {
         $str = self::pkcs5Pad($str);
@@ -20,6 +26,25 @@ class HesabeCrypt
         $encrypted = unpack('C*', $encrypted);
         $encrypted = self::byteArray2Hex($encrypted);
         return urlencode($encrypted);
+    }
+
+    /**
+     * Decryption Method for AES Algorithm
+     * @param $code
+     * @param $key
+     * @param $ivKey
+     * @return false|string
+     */
+    public static function decrypt($code, $key, $ivKey)
+    {
+        if (!(ctype_xdigit($code) && strlen($code) % 2 === 0)) {
+            return false;
+        }
+        $code = self::hex2ByteArray(trim($code));
+        $code = self::byteArray2String($code);
+        $code = base64_encode($code);
+        $decrypted = openssl_decrypt($code, 'AES-256-CBC', $key, OPENSSL_ZERO_PADDING, $ivKey);
+        return self::pkcs5Unpad($decrypted);
     }
 
     private static function pkcs5Pad($text): string
@@ -34,20 +59,6 @@ class HesabeCrypt
         $chars = array_map("chr", $byteArray);
         $bin = implode($chars);
         return bin2hex($bin);
-    }
-
-    //Decryption Method for AES Algorithm Starts
-
-    public static function decrypt($code, $key, $ivKey)
-    {
-        if (!(ctype_xdigit($code) && strlen($code) % 2 === 0)) {
-            return false;
-        }
-        $code = self::hex2ByteArray(trim($code));
-        $code = self::byteArray2String($code);
-        $code = base64_encode($code);
-        $decrypted = openssl_decrypt($code, 'AES-256-CBC', $key, OPENSSL_ZERO_PADDING, $ivKey);
-        return self::pkcs5Unpad($decrypted);
     }
 
     private static function hex2ByteArray($hexString)
