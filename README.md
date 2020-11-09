@@ -32,7 +32,7 @@ You need to pass the credentials in the class parameters.
                 true
             );
     ```
-   The last parameter is a boolean which indicates that `test` which environment are you on.
+   The last parameter is a boolean which indicates on which environment are you on.
    - `true`  = Sandbox
    - `false` = Production
     
