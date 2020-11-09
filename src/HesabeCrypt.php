@@ -29,7 +29,7 @@ class HesabeCrypt
         return $text . str_repeat(chr($pad), $pad);
     }
 
-    public static function byteArray2Hex($byteArray): string
+    private static function byteArray2Hex($byteArray): string
     {
         $chars = array_map("chr", $byteArray);
         $bin = implode($chars);
@@ -50,19 +50,19 @@ class HesabeCrypt
         return self::pkcs5Unpad($decrypted);
     }
 
-    public static function hex2ByteArray($hexString)
+    private static function hex2ByteArray($hexString)
     {
         $string = hex2bin($hexString);
         return unpack('C*', $string);
     }
 
-    public static function byteArray2String($byteArray): string
+    private static function byteArray2String($byteArray): string
     {
         $chars = array_map("chr", $byteArray);
         return implode($chars);
     }
 
-    public static function pkcs5Unpad($text)
+    private static function pkcs5Unpad($text)
     {
         $pad = ord($text[strlen($text) - 1]);
         if ($pad > strlen($text)) {
