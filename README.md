@@ -4,104 +4,67 @@
 [![License](https://poser.pugx.org/nextpack/nextpack/license)](https://packagist.org/packages/nextpack/nextpack)
 [![Fahad Khan](https://img.shields.io/badge/Author-Fahad%20Khan-orange.svg)](https://hesabe.com)
 
+**Hesabe Payment Package** is a PHP package designed to integrate Hesabe Payment Gateway in your application in the easiest way possible.
 
+Get in touch with [Hesabe Support](mailto:support@hesabe.com) to get credentials in order to use this package.
 
+## Requirements
+1. Minimum PHP 7.0+ required
+2. [Composer](https://getcomposer.org) installed globally
 
-
-
-
-
-
-
-
-**Hesabe Payment** is a PHP package designed to integrate Hesabe Payment Gateway in your application in the easiest way possible.
-
->Clone NextPack and build your next open source package on top of it.
-
-**NextPack** strives to facilitates and boosts the development process of PHP Packages. And it highly recommend producing framework agnostic packages.
-
-Produce more open source composer packages with the least amount of time.
-
-![](https://s32.postimg.org/d2fler4qd/next_pack_logo_squared_v2.png)
-
-
-
-<a name="Highlights"></a>
-## Highlights
-
-__Nextpack includes:__
-
-- **Rich package skeleton**, (containing common files required by almost every PHP package)
-- Ready **Unit Test**
-- Ready **config files reader**
-- Ready **Servie Provider** (for Laravel)
-- Ready **Facade Class** (for Laravel)
-- Version Control: **Git** (`.gitattributes`, `.gitignore`)
-- Continuous Integration: **Travis** and **Scrutinizer** (`.scrutinizer.yml`, `.travis.yml`)
-- Testing: **PHPUnit** (`phpunit.xml`)
-- Package Manager: **Composer** (`composer.json`)  
-  
-
-
-
-
-
-<a name="Installation"></a>
 ## Installation
+1. Run the following command in the root of your PHP project:
+    ```
+    composer require hesabe/payment
+    ```
+2.  Import the `Payment` class in the file you want to use this package.
+    ```
+    use Hesabe\Payment\Payment; 
+    ```
+3. Initialise the `Hesabe` instance using `Payment` class. 
+You need to pass the credentials in the class parameters.
+    ```
+    $hesabe = new Payment(
+                __SECRET_KEY__,
+                __IV_KEY__,
+                __ACCESS_CODE__,
+                true
+            );
+    ```
+   The last parameter is a boolean which indicates that `test` which environment are you on.
+   - `true`  = Sandbox
+   - `false` = Production
+    
+   By default, the value will be `false`.
+   
+4. Call the `checkout` method to get the token from `Hesabe` by passing the request parameters in an array.
+    ```
+    $token = $hesabe->checkout([
+                "merchantCode" => __MERCHANT_CODE__,
+                "amount" => "1",
+                "paymentType" => "0",
+                "responseUrl" => "http://yourlink.com",
+                "failureUrl" => "http://yourlink.com",
+                "orderReferenceNumber" => "",
+                "variable1" => null,
+                "variable2" => null,
+                "variable3" => null,
+                "variable4" => null,
+                "variable5" => null,
+                "version" => "2.0",
+            ]);
+    ```
+   These are the basic parameters which are passed to get a token, for more information about these parameters you may have a look [here](https://developer.hesabe.com/index.html#posting-payment-data).
 
-
-##### Software Requirement
-- Git
-- Composer
-
-
-##### Installation Steps
-
-1. `git clone https://github.com/nextpack/nextpack.git`
-2. `composer update`
-3. make sure everything is OK by running the tests `phpunit`
-
-
-
-
-<a name="Customization"></a>
-## Customization
-
-After you install a fresh copy of Nextpack, the only thing you need to do is customizing it to meet your needs, before start codig your package.
-
-
-The steps include renaming the code samples shipped with the Nextpack:
-
-1. Change the namespace of the application from `Hesabe\Payment` to your `Vendor-name\Package-name`. *(you can do this using the [Replace All] feature of your IDE).*
-2. Update the following values in `composer.json`:  `name`, `description`, `keywords`, `authors`, `autoload` and don't forget to update the `namespaces`. (you might need to run `composer dump-autoload` after the changes).
-3. Run `composer install`
-4. Rename `SampleFacadeAccessor.php` and update the returned string inside the `getFacadeAccessor()` function.
-5. Rename `NextpackServiceProvider` and update the content of the following functions: `facadeBindings()`, `configPublisher()` and `implementationBindings()`.
-6. Update the config file `nextpack.php`, (or remove it if not necessary).
-7. Delete this `README.md` file. And rename the `README.md.READY` to `README.md`.
-8. Update `LICENSE` by replacing `::Vendor-Name` and `::Package-Name` with your vendor and package names.
-9. Edit the new `README.md` 
-13. Delete the sample `tests` function. Keep the `TestCase.php`.
-14. Update the "testsuite" name in the `phpunit.xml`.
-
-
-
-## Test
-
-To run the tests, run the following command from the project folder.
-
-``` bash
-$ ./vendor/bin/phpunit
-```
-
-
-
+5. The final step, You'll receive a `string` type in the `$token`. You need to pass the token as a redirection to the Payment URL.
+    ```
+    header("Location: $hesabe->getRedirectBaseUrl()/payment?data=$token");
+    ```
+    You should be redirected to the Hesabe Payment page.
 
 ## Credits
 
-- [Fahad Khan](https://github.com/Mahmoudz)
-
-
+- [Fahad Khan](https://github.com/fkhan-hesabe)
 
 ## License
 
