@@ -1,6 +1,6 @@
 {
     "name": "hesabe/payment",
-    "description": "Hesabe Payment package",
+    "description": "Hesabe Payment Package allows you to use the Payment API to accept payments in Kuwait",
     "license": "MIT",
     "keywords": [
         "Hesabe",
