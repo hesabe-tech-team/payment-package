@@ -1,7 +1,8 @@
 # Hesabe Payment Package
 
-[![Latest Stable Version](https://poser.pugx.org/nextpack/nextpack/v/stable)](https://packagist.org/packages/nextpack/nextpack) 
+[![Latest Stable Version](https://poser.pugx.org/hesabe/payment/v)](https://packagist.org/packages/hesabe/payment) 
 [![License](https://poser.pugx.org/nextpack/nextpack/license)](https://packagist.org/packages/nextpack/nextpack)
+[![Total Downloads](https://poser.pugx.org/hesabe/payment/downloads)](https://packagist.org/packages/hesabe/payment)
 [![Fahad Khan](https://img.shields.io/badge/Author-Fahad%20Khan-orange.svg)](https://hesabe.com)
 
 **Hesabe Payment Package** is a PHP package designed to integrate Hesabe Payment Gateway in your application in the easiest way possible.
