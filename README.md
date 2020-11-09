@@ -55,7 +55,7 @@ You need to pass the credentials in the class parameters.
         "version" => "2.0",
     ]);
     ```
-   These are the basic parameters which are passed to get a token, for more information about these parameters you may have a look [here](https://developer.hesabe.com/index.html#posting-payment-data).
+   These are the basic parameters which are passed to initiate a transaction, for more information about these parameters you may have a look [here](https://developer.hesabe.com/index.html#posting-payment-data).
 
 ## Credits
 
