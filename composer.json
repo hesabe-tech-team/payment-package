@@ -10,7 +10,7 @@
         {
             "name": "Fahad Khan",
             "email": "fkhan@hesabe.com",
-            "homepage": "http://hesabe.com",
+            "homepage": "https://hesabe.com",
             "role": "Payment API"
         }
     ],
@@ -23,7 +23,6 @@
     "require-dev": {
         "roave/security-advisories": "dev-master",
         "phpunit/phpunit": "4.*",
-        "mockery/mockery": "0.*",
         "symfony/var-dumper": "2.*"
     },
     "autoload": {
