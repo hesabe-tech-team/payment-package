@@ -12,7 +12,7 @@ class Payment
     private $secretKey;
     private $ivKey;
     private $accessCode;
-    private $test;
+    private $testEnv;
 
     /**
      * Payment constructor.
@@ -20,14 +20,14 @@ class Payment
      * @param $secretKey
      * @param $ivKey
      * @param $accessCode
-     * @param  bool  $test
+     * @param $testEnv
      */
-    public function __construct($secretKey, $ivKey, $accessCode, $test = false)
+    public function __construct($secretKey, $ivKey, $accessCode, $testEnv = false)
     {
         $this->secretKey = $secretKey;
         $this->ivKey = $ivKey;
         $this->accessCode = $accessCode;
-        $this->test = $test;
+        $this->testEnv = $testEnv;
     }
 
     public function checkout(array $params): string
@@ -73,6 +73,6 @@ class Payment
             false => 'https://api.hesabe.com'
         ];
 
-        return $endpoints[$this->test];
+        return $endpoints[$this->testEnv];
     }
 }
