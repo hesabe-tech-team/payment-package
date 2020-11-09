@@ -38,30 +38,24 @@ You need to pass the credentials in the class parameters.
     
    By default, the value will be `false`.
    
-4. Call the `checkout` method to get the token from `Hesabe` by passing the request parameters in an array.
+4. Call the `checkout` method from `Hesabe` by passing the request parameters in an array. It will redirect you to the Hesabe Payment Page.
     ```
-    $token = $hesabe->checkout([
-                "merchantCode" => __MERCHANT_CODE__,
-                "amount" => "1",
-                "paymentType" => "0",
-                "responseUrl" => "http://yourlink.com",
-                "failureUrl" => "http://yourlink.com",
-                "orderReferenceNumber" => "",
-                "variable1" => null,
-                "variable2" => null,
-                "variable3" => null,
-                "variable4" => null,
-                "variable5" => null,
-                "version" => "2.0",
-            ]);
+    $hesabe->checkout([
+        "merchantCode" => __MERCHANT_CODE__,
+        "amount" => "1",
+        "paymentType" => "0",
+        "responseUrl" => "http://yourlink.com",
+        "failureUrl" => "http://yourlink.com",
+        "orderReferenceNumber" => "",
+        "variable1" => null,
+        "variable2" => null,
+        "variable3" => null,
+        "variable4" => null,
+        "variable5" => null,
+        "version" => "2.0",
+    ]);
     ```
    These are the basic parameters which are passed to get a token, for more information about these parameters you may have a look [here](https://developer.hesabe.com/index.html#posting-payment-data).
-
-5. The final step, You'll receive a `string` type in the `$token`. You need to pass the token as a redirection to the Payment URL.
-    ```
-    header("Location: $hesabe->getRedirectBaseUrl()/payment?data=$token");
-    ```
-    You should be redirected to the Hesabe Payment page.
 
 ## Credits
 
