@@ -30,7 +30,7 @@ class Payment
         $this->testEnv = $testEnv;
     }
 
-    public function checkout(array $params): string
+    public function checkout(array $params)
     {
         $encryptedData = HesabeCrypt::encrypt(json_encode($params), $this->secretKey, $this->ivKey);
 
@@ -63,10 +63,13 @@ class Payment
             return 'Something went wrong';
         }
 
-        return $jsonData['response']['data'];
+        $token = $jsonData['response']['data'];
+        $baseUrl = $this->getRedirectBaseUrl();
+
+        return header("Location: $baseUrl/payment?data=$token");
     }
 
-    public function getRedirectBaseUrl(): string
+    private function getRedirectBaseUrl(): string
     {
         $endpoints = [
             true => 'https://sandbox.hesabe.com',
